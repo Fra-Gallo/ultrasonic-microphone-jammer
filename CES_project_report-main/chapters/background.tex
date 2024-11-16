@@ -1,0 +1,64 @@
+\chapter{Background}
+\label{background}
+This section of the report will introduce to the reader the most relevant microphone technologies, highlighting their core features and primary domains of use.\\
+Furthermore, the different types of known DoS attacks on microphones will be reviewed, evaluating the advantages and disadvantages of each. This analysis will justify the selection of the chosen attack method for the project.
+\section{Microphone Technologies}
+Microphones are critical components in many modern devices, enabling audio capture for communication, recording, and interaction with digital assistants.
+Since they are used in a wide range of devices, their underlying technology must meet diverse requirements, resulting in both orizontal diversification and vertical improvement over the past century.\\
+While acknowledging the historical significance of early microphone implementations, this report will focus only on the most commonly used models today, as they are most relevant to the development of the project.
+\subsection{Dynamic Microphones}
+A dynamic microphone is a type of mic that converts sound waves into electrical signals using electromagnetic induction thanks to a special component, the permanent magnet.
+The permament magnet can either be a metal coil or a 'ribbon transducer': when the sound waves hit the microphone, the magnet will move, resulting in the generation of an electrical signal.
+This type of microphone is known for its durability, ability to handle loud environments, and tolerance of background noise.
+Additionally, it does not require external power, making it a versatile option for various situations.
+Although it may not be as sensitive or well-suited for recording high-frequency sounds, it is ideal for live music events and concerts involving loud sounds.
+\subsection{Condenser Microphones}
+Often referred to as the 'cousins' of dynamic microphones, condenser microphones generate electrical signals from sound waves through the use of a capacitor.
+The capacitor consists of two charged metal plates, one of which is movable.
+When a sound wave strikes the diaphragm (the movable plate), the distance between the plates changes, producing an electrical signal that corresponds to the sound captured.
+While condenser microphones require an electrical current to charge the plates and are more sensitive to environmental conditions compared to dynamic microphones, they excel at capturing high-frequency sounds and vocals, delivering crisp, detailed, and high-quality audio.
+These qualities make condenser microphones ideal for studio recording, as they are best suited for quiet environments and require the external power source.
+\subsection{Electret Condenser Microphones}
+The electret condenser microphone is a subtype of the standard condenser microphone.
+The key difference is that, while standard condenser microphones require a power supply to maintain the electrical charge, electret microphones use an electret material to keep the capsule charged.
+This type of material is one that carries a permanent electrical charge sealed within an insulating film.
+Since electret microphones don’t require an external power source to charge the plates, they tend to be less expensive than standard condenser microphones, making them ideal for use in consumer electronics and mobile devices.
+\subsection{Micro-Electro-Mechanical Systems Microphones}
+MEMS microphones is another subtype of the standard condenser microphone which shares many characteristics with the electret type one.
+However, in this case, the transducer is a microscopic component that integrates seamlessly with the microscopic semiconductor-based components in an integrated circuit.
+This allows for smaller devices, making them suitable for an even wider range of applications, such as smartphones, tablets, laptops, hearing aids, voice biometric, digital voice assistants, and more.
+Additionally, compared to electret microphones, MEMS microphones can offer superior audio performance, though they tend to be more susceptible to mechanical and electrical noise.
+
+\section{Microphone Attacks}
+Having explored the landscape of microphone technologies, it is evident that the ones we encounter most frequently in daily life are Electret microphones, and even more commonly, MEMS microphones.
+Both technologies share key components, namely the membrane and the capacitor, each of which is vulnerable to specific types of attacks that can effectively prevent microphones from recording conversations intended to remain private. \\
+The membrane can be made to vibrate by flooding the microphone with sound waves, thereby overwriting the sound waves from the conversation and preventing proper recording.
+Meanwhile, the capacitor can be targeted by altering its electric charge, causing it to produce a distorted or different electrical signal instead of the original one.\\
+The following section will examine known DoS attacks that exploit the vulnerabilities of these two components, evaluating each attack technique in terms of its suitability for the project.
+\subsection{Electromagnetic Pulse Attack}
+A general EMP attack involves releasing a burst of electromagnetic radiation capable of disrupting or destroying electronic equipment and systems across the target area.
+It is frequently employed in modern warfare with the goal of causing infrastructural disruption, targeting communication systems, computers, vehicles, and other critical equipment.\\
+When using an EMP to disable microphones, the strategy involves emitting a powerful burst of electromagnetic radiation that overwhelms and potentially damages the electronic components within the microphones.
+This could result in the microphones failing to generate the intended electrical signals, or even becoming completely non-functional, thus disabling their ability to record or transmit audio.
+The severity of the impact would depend on the intensity and proximity of the EMP, potentially leaving affected microphones unusable until they are repaired or replaced.\\
+While theoretically the most effective method on paper, employing an EMP for this project is impractical for several reasons.
+First and foremost, health concerns must be taken into account, as this type of attack could pose risks to nearby individuals with pacemakers, hearing aids, or other medical devices.
+Secondly, it would lack control over the range of action and the potential impact on targets.
+Additionally, testing the prototype device would be extremely difficult, with results that could be highly unpredictable and the testing targets potentially suffering permanent damage.
+Finally, the need for high power sources makes it unsuitable for embedded devices.
+\subsection{Laser Injection Attack}
+Luminous attacks on microphones involve using lasers to disrupt or damage their functionality.
+Lasers emit focused beams of intense light that can interfere with microphones in several ways.
+First, a powerful laser beam can overload the microphone's optical or electronic sensors, causing them to register false signals.
+Second, laser light can interfere with the microphone's ability to accurately capture sound waves, potentially distorting or disrupting the audio signal.
+In extreme cases, particularly with high-powered lasers, the intense heat generated by the beam can physically damage the microphone's components, such as diaphragms, sensors and circuitry.
+Moreover, luminous attacks can compromise privacy by remotely activating microphones through light-based signals, thereby bypassing traditional security measures. \\
+However, this type of attack does not align with the project's objectives.
+The limited applicability due to its high specificity, the need for precise targeting making it impractical in general environments, and its high production costs classify the laser injection attack as unsuitable for this project.
+\subsection{Ultrasonic Sound Waves Jamming Attack}
+Ultrasonic sound waves are those that travel at frequencies above 20 kHz, exceeding the range of human hearing.
+This type of sound wave can be used to perform jamming attacks on microphones, disrupting their functionality.
+In particular, they can overwhelm the microphone's sensors, which are typically calibrated to capture frequencies within the audible spectrum.
+When exposed to ultrasonic sound waves, these sensors may register false signals or become saturated, resulting in inaccurate audio captures and, thereby, distorted or unintelligible audio output. \\
+This attack meets all the requirements to be suitable for the project: it can target nearly any everyday microphone, delivers strong performance, and when properly tuned, becomes extremely difficult—if not impossible—for humans to detect.
+Moreover, its low implementation cost and non-destructive nature make testing the prototype device much more feasible.

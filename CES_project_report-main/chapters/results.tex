@@ -1,0 +1,41 @@
+\chapter{Results}
+\begin{table}[H]
+    \center
+    \begin{tabular}{|c|l|l|l|l|}
+    \hline
+    Device     & 0-20cm & 20-40cm & 40-60cm & 70+ cm \\ \hline
+    Smartphone & Jammed  & Jammed  & Distorted & Null  \\ \hline
+    PC         & Jammed  & Jammed & Jammed & Null \\ \hline
+    Smartwatch &  Jammed  & Jammed & Jammed & Null \\ \hline
+    Smart speaker & Jammed & Distorted & Null & Null \\ \hline
+    \end{tabular}
+    \caption{Performance Table}
+\end{table}
+The previous table shows how the device performs on different devices at various ranges.
+The power supplied to the device, which is directly related to the operational range of the jamming attack, has been limited to 50W in order to maintain low energy consumption and improve battery life.
+The values are assigned on a perceptual evaluation of the recordings performed during the attack:
+\begin{itemize}
+    \item Jammed: the recording is completely unintelligible.
+    \item Distorted: the recording is intelligible, but with significant difficulty in understanding the content.
+    \item Null: the jamming effect is not perceived.
+\end{itemize}
+The device demonstrated its best performance on PCs and smartwatches, particularly at close-medium range, while smartphones and smart speakers proved to be more resilient to this type of attack. 
+Given the widespread use of this devices, the prototype jammer can be considered effective in most real-world scenarios.
+
+\section{Known Issues}
+Although this implementation fully satisfies the requirements outlined in the \nameref{overview} chapter and achieves respectable performance, the device is still in its prototype phase and is affected by certain issues:
+\begin{itemize}
+    \item Physical barriers: physical barriers can partially or completely negate the jamming attack, as it relies on soundwaves, which are affected by physical laws such as absorption, transmission, and diffraction.
+    \item Range: the current implementation performs adequately at medium range, but there is still room for notable improvement.
+    \item Rechargeability of batteries: currently, despite the low energy consumption mitigating the impact of this issue, there is no possibility of recharging the batteries.
+    \item Shell prototype design: The spherical shell's speaker holes are slightly inconsistent in size, with some being larger and others smaller, and the two halves of the sphere are held together in a rudimentary manner.
+\end{itemize}
+\section{Future Work}
+The concept of this project has successfully achieved its predetermined objectives. 
+However, there are several areas where it could be further improved. 
+
+Given more time, most of the known issues could be addressed: increasing the power to the speaker could enhance the operational range and effectiveness of the jamming attack, and higher-quality materials could be used to improve the robustness of the spherical shell and base.
+
+Another significant improvement would be the addition of a white-noise generator with a dedicated speaker, introducing two potential operational modes for the device. 
+The 'Stealth mode' would maintain the current jamming attack functionality, while the 'Paranoic mode' would activate the white-noise speaker to generate additional distortion, providing the user with greater assurance that nearby microphones cannot capture sensitive conversations.
+Additionally, incorporating the ability to adjust the volume of the white noise could help mitigate the issue caused by physical barriers.
